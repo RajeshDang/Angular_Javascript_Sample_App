@@ -1,0 +1,22 @@
+<div class="fluid-container">
+  <div class="list">
+    <div class="card" *ngFor="let item of enrollees | async" [ngClass]="{'active': item.active}" (click)="editEnrollee(item.id)">
+      <div class="row">
+        <label>ID:</label>
+        <span>{{item.id}}</span>
+      </div>
+      <div class="row">
+        <label>Activation Status:</label>
+        <span>{{item.active}}</span>
+      </div>
+      <div class="row">
+        <label>Name:</label>
+        <span>{{item.name}}</span>
+      </div>
+      <div class="row">
+        <label>Date of Birth:</label>
+        <span>{{item.dateOfBirth}}</span>
+      </div>
+    </div>
+  </div>
+</div>

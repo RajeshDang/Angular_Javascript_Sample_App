@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-5 text-center">Enrollee Details</h1>
+    <form [formGroup]="enrolleeForm" (ngSubmit)="onSubmit(enrolleeForm)">
+      <div class="mb-3 row">
+        <label for="enrollee_id" class="col-sm-2 col-form-label">Enrollee ID</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control" id="enrollee_id" formControlName="id">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="enrollee_name" class="col-sm-2 col-form-label">Enrollee Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="enrollee_name" formControlName="name">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="enrollee_status" class="col-sm-2 col-form-label">Activation Status</label>
+        <div class="col-sm-10">
+          <select class="form-control" for="enrollee_status" formControlName="active">
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </div>
+      </div>
+      <!-- <div class="mb-3 form-check">
+        <input class="form-check-input" type="checkbox" value="" id="enrollee_status" formControlName="active">
+        <label class="form-check-label" for="enrollee_status">
+          Active
+        </label>
+      </div> -->
+      <div class="mb-3 row">
+        <label for="enrollee_dob" class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control" id="enrollee_dob" formControlName="dateOfBirth">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+          <button type="submit" class="btn btn-success">Update Details</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
